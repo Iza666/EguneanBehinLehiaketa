@@ -1,6 +1,6 @@
 PImage img; //Atzealdeko irudia
 int count = 0;
-int irudiaCount = 100;  //Zenbat irudi sortu nahi ditugun
+int irudiaCount = 1;  //Zenbat irudi sortu nahi ditugun
 int x;
 int y;
 int azkenX;  //Azkenengo ezarri den puntuaren X ardatzaren balioa
@@ -13,7 +13,7 @@ int[][] puntuak3 = new int[5][2];
 int puntua1_X = 122;  //Irudian, ixa edo Tick-aren gainean dauden puntuen koordenatuak / bideen bukaerako puntuak
 int puntua1_Y = 320;
 int puntua2_X = 296;
-int puntua2_Y = 320;
+int puntua2_Y = 320; 
 int puntua3_X = 471;
 int puntua3_Y = 320;
 int erantzuna;  //Erantzuna zuzena eta okerrak gordetzeko
@@ -27,13 +27,13 @@ void setup() {  //Setup funtzioa lehenengo eta behin soilik exekutatzen da
   size(600, 400);  //Canvas-aren tamainua
   img = loadImage("EguneanBehin.png");  //Irudia kargatzen du 'data' karpetatik 
   
-  csvTaula = new Table();  //Csv-a sortzeko taularen goiburuak ezartzeko
+  csvTaula = new Table();  //Csv-a sortzeko taularen goiburuak ezartzeko 
   csvTaula.addColumn("Mota");
   csvTaula.addColumn("Galdera");
   csvTaula.addColumn("Erantzun zuzena");
   csvTaula.addColumn("Erantzun okerra 1");
   csvTaula.addColumn("Erantzun okerra 2");
-  csvTaula.addColumn("Fitxategia");
+  csvTaula.addColumn("Fitxategia"); 
 }
 void draw(){  //Draw funtzioa etengabean exekutatzen da Processing-en
   while(irudiaCount > 0){  //Nahi ditugun irudien arabera loop-eatuko du

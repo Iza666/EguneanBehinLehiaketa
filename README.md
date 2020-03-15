@@ -18,7 +18,7 @@ Hasieran, irudi bat kargatzen da. 1, 2 eta 3 zenbakiak ditu goialdean, eta irudi
 Programaren funtzionaltasuna hainbat ataletan banatzen da.
 
 ### **1.** setup()
-Processing-en, funtzio hau hasieran, beste guztiaren aurretik exekutatzen da, behin soilik. Hemen Canvas-aren dimentsioak ezartzen dira eta hasierako irudia kargatzen da. Csv artxiboaren goiburuko kanpo bakoitza ere hemen definitzen da. HOOOOOOOONA MENE ADIBIDE BAT
+Processing-en, funtzio hau hasieran, beste guztiaren aurretik exekutatzen da, behin soilik. Hemen Canvas-aren dimentsioak ezartzen dira eta hasierako irudia kargatzen da. Csv artxiboaren goiburuko kanpo bakoitza ere hemen definitzen da. ![Adibide irudia](irudiak/bidea_9_3_1_0_7_8_0_2_1.png)
 
 ### **2.** draw()
 draw() funtzioa etengabean exekutatzen da Processing-en. Hemen sartuko dugu gainontzeko kodigoa. Hasieran while bat daukagu. Buelta bakoitzean, Canvas-a berrabiarazten du eta hasierako irudia berriro ezarri.
@@ -35,4 +35,4 @@ Bide bakoitzeko lehen 4 puntuak zeintzuk diren dakizkigunean, bide bakoitza ausa
 Behin puntu guztiak ezarrita daudenean, haien artean marrak marraztuko ditugu, Processing-ek eskaintzen digun funtzio batekin. bezier() erabiltzean puntuen artean kurbak sortzen dira, marra zuzenen ordez.
 
 ### **6.** Irudak / Csv gorde
-Irudia osatuta dagoenean eta erantzuna zein erantzun okerrak zeintzuk diren dakizkigunean, irudiaren izena ausazko zenbaki batzuekin kalkulatuko dugu eta 
+Irudia osatuta dagoenean eta erantzuna zein erantzun okerrak zeintzuk diren dakigunean, irudiaren izena ausazko zenbaki batzuekin erabakiko dugu. Irudia 'irudiak' karpetan gordeko da eta sortuta ez badago automatikoki sortuko da. Irudi horren informazioa csv artxiboan gordeko da, berriz ere, artxiboa ez badago sortuta, automatikoki sortuko du programak.
