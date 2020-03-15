@@ -16,10 +16,10 @@ int puntua2_X = 296;
 int puntua2_Y = 320;
 int puntua3_X = 471;
 int puntua3_Y = 320;
-int erantzuna;
+int erantzuna;  //Erantzuna zuzena eta okerrak gordetzeko
 int okerra1;
 int okerra2;
-String pngPath = "irudiak/";  //irudiak gordeko diren ibilbidea
+String pngPath = "irudiak/";  //irudiak gordeko diren helbidea
 String csvPath = "Bideak.csv";  //Sortuko den csv artxiboaren izena
 Table csvTaula;  //Csv fitxategia sortzeko erabilitako taula
 
@@ -27,7 +27,7 @@ void setup() {  //Setup funtzioa lehenengo eta behin soilik exekutatzen da
   size(600, 400);  //Canvas-aren tamainua
   img = loadImage("EguneanBehin.png");  //Irudia kargatzen du 'data' karpetatik 
   
-  csvTaula = new Table();  //Csv-a sortzeko taularen goiburua ezartzeko
+  csvTaula = new Table();  //Csv-a sortzeko taularen goiburuak ezartzeko
   csvTaula.addColumn("Mota");
   csvTaula.addColumn("Galdera");
   csvTaula.addColumn("Erantzun zuzena");
@@ -44,40 +44,40 @@ void draw(){  //Draw funtzioa etengabean exekutatzen da Processing-en
     puntuak3 = new int[5][2];
     count = 0;  
     
-    puntuak1[0][0] = 122;  //Array bakoitzaren lehen posizioan, irudian, zenbakien azpian dauden puntuen posizioa sartzen da
+    puntuak1[0][0] = 122;  //Array bakoitzaren lehen posizioan, irudiako zenbakien azpian dauden puntuen posizioa sartzen da
     puntuak1[0][1] = 79;
     puntuak2[0][0] = 296;
     puntuak2[0][1] = 79;
     puntuak3[0][0] = 471;
     puntuak3[0][1] = 79;
     
-    azkenX = 122;
+    azkenX = 122;  //Hurrengo puntua 
     azkenY = 79;
     while(count < 9){  //While honetan bideek edukiko dituzten ausazko puntuak erabakiko dira
       if(count < 3){  //Lehen array-a betetzeko
         XY_ezarri();  //Puntu berriaren X eta Y lortu
         count++;
-        puntuak1[count][0] = x;
+        puntuak1[count][0] = x;  //Puntua array-ra gehitu
         puntuak1[count][1] = y;
       }
       else if(count >= 3 && count < 6){  //Bigarren array-a betetzeko
-        if(count == 3){
+        if(count == 3){  //Bide ezberdinarekin hasi garenez bide honetako lehenengo puntua jarriko dugu azkenX eta azkenY-n
           azkenX = 296;
           azkenY = 79;
         }
         XY_ezarri();  //Puntu berriaren X eta Y lortu
         count++;
-        puntuak2[count-3][0] = x;
+        puntuak2[count-3][0] = x;  //Puntua array-ra gehitu
         puntuak2[count-3][1] = y;
       }
       else if(count >= 6 && count < 9){  //Hirugarren array-a betetzeko
-        if(count == 6){
+        if(count == 6){  //Bide ezberdinarekin hasi garenez bide honetako lehenengo puntua jarriko dugu azkenX eta azkenY-n
            azkenX = 471;
            azkenY = 79;
         }
         XY_ezarri();  //Puntu berriaren X eta Y lortu
         count++;
-        puntuak3[count-6][0] = x;
+        puntuak3[count-6][0] = x;  //Puntua array-ra gehitu
         puntuak3[count-6][1] = y;
       }
     }
@@ -228,7 +228,7 @@ void marraztuMarrak(int[][] puntuak){
     );
   }
 }
-void gordeIrudiakCsv(){
+void gordeIrudiakCsv(){  //Irudiak eta csv fitxategia gordetzeko balio digu
   String fitxategia = "";  //Fitxategiaren izena ausazko 9 zenbakik osatzen du 
   for(int kontua = 0; kontua < 9; kontua++){
     int zenb = int(random(0, 10));
