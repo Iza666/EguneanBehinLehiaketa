@@ -1,16 +1,16 @@
-PImage img;
+PImage img; //Atzealdeko irudia
 int count = 0;
-int irudiaCount = 100;
+int irudiaCount = 100;  //Zenbat irudi sortu nahi ditugun
 int x;
 int y;
-int azkenX;
-int azkenY;
+int azkenX;  //Azkenengo ezarri den puntuaren X ardatzaren balioa
+int azkenY;  //Azkenengo ezarri den puntuaren Y ardatzaren balioa
 boolean X_ondo;
 boolean Y_ondo;
-int[][] puntuak1 = new int[5][2];
+int[][] puntuak1 = new int[5][2];  //Bideko puntuentzako array bidimentsionalak
 int[][] puntuak2 = new int[5][2];
 int[][] puntuak3 = new int[5][2];
-int puntua1_X = 122;
+int puntua1_X = 122;  //Irudian, ixa edo Tick-aren gainean dauden puntuen koordenatuak / bideen bukaerako puntuak
 int puntua1_Y = 320;
 int puntua2_X = 296;
 int puntua2_Y = 320;
@@ -19,15 +19,15 @@ int puntua3_Y = 320;
 int erantzuna;
 int okerra1;
 int okerra2;
-String pngPath = "irudiak/";
-String csvPath = "Bideak.csv";
-Table csvTaula;
+String pngPath = "irudiak/";  //irudiak gordeko diren ibilbidea
+String csvPath = "Bideak.csv";  //Sortuko den csv artxiboaren izena
+Table csvTaula;  //Csv fitxategia sortzeko erabilitako taula
 
-void setup() {
-  size(600, 400);
-  img = loadImage("EguneanBehin.png");
+void setup() {  //Setup funtzioa lehenengo eta behin soilik exekutatzen da 
+  size(600, 400);  //Canvas-aren tamainua
+  img = loadImage("EguneanBehin.png");  //Irudia kargatzen du 'data' karpetatik 
   
-  csvTaula = new Table();
+  csvTaula = new Table();  //Csv-a sortzeko taularen goiburua ezartzeko
   csvTaula.addColumn("Mota");
   csvTaula.addColumn("Galdera");
   csvTaula.addColumn("Erantzun zuzena");
@@ -35,16 +35,16 @@ void setup() {
   csvTaula.addColumn("Erantzun okerra 2");
   csvTaula.addColumn("Fitxategia");
 }
-void draw(){
-  while(irudiaCount > 0){
-    background(255);
-    image(img, 0, 0);
-    puntuak1 = new int[5][2]; //<>//
+void draw(){  //Draw funtzioa etengabean exekutatzen da Processing-en
+  while(irudiaCount > 0){  //Nahi ditugun irudien arabera loop-eatuko du
+    background(255);  //Loop bat amaitzean atzealdea ezabatuko du 
+    image(img, 0, 0);  //Berriro 'data' karpetan dagoen artxiboa ezarriko du atzealdean
+    puntuak1 = new int[5][2];  //Array-ak berriro hasieratzen ditu //<>//
     puntuak2 = new int[5][2];
     puntuak3 = new int[5][2];
-    count = 0;
+    count = 0;  
     
-    puntuak1[0][0] = 122;
+    puntuak1[0][0] = 122;  //Array bakoitzaren lehen posizioan, irudian, zenbakien azpian dauden puntuen posizioa sartzen da
     puntuak1[0][1] = 79;
     puntuak2[0][0] = 296;
     puntuak2[0][1] = 79;
@@ -53,46 +53,46 @@ void draw(){
     
     azkenX = 122;
     azkenY = 79;
-    while(count < 9){
-      if(count < 3){
-        XY_ezarri();
+    while(count < 9){  //While honetan bideek edukiko dituzten ausazko puntuak erabakiko dira
+      if(count < 3){  //Lehen array-a betetzeko
+        XY_ezarri();  //Puntu berriaren X eta Y lortu
         count++;
         puntuak1[count][0] = x;
         puntuak1[count][1] = y;
       }
-      else if(count >= 3 && count < 6){
+      else if(count >= 3 && count < 6){  //Bigarren array-a betetzeko
         if(count == 3){
           azkenX = 296;
           azkenY = 79;
         }
-        XY_ezarri();
+        XY_ezarri();  //Puntu berriaren X eta Y lortu
         count++;
         puntuak2[count-3][0] = x;
         puntuak2[count-3][1] = y;
       }
-      else if(count >= 6 && count < 9){
+      else if(count >= 6 && count < 9){  //Hirugarren array-a betetzeko
         if(count == 6){
            azkenX = 471;
            azkenY = 79;
         }
-        XY_ezarri();
+        XY_ezarri();  //Puntu berriaren X eta Y lortu
         count++;
         puntuak3[count-6][0] = x;
         puntuak3[count-6][1] = y;
       }
     }
     
-    azkenPuntuak_Erantzuna();
+    azkenPuntuak_Erantzuna();  //Azken puntuak gehitu Array-etara
     
-    marraztuMarrak(puntuak1);
+    marraztuMarrak(puntuak1);  //Azkenik, marrak marrazten dira irudia gordetzeko
     marraztuMarrak(puntuak2);
     marraztuMarrak(puntuak3);
-    gordeIrudiakCsv();
+    gordeIrudiakCsv();  //Irudia .png luzapenarekin gordetzen da eta haren informazioa csv artxiboan gordetzen da
     --irudiaCount;
   }
 }
 
-void XY_ezarri(){
+void XY_ezarri(){  //Puntu bat bere aurreko puntutik distantzia zehatz batera agertzeko, marrazkiak ulergarriagoak izan daitezen 
   X_ondo = false;
   Y_ondo = false;
   x = int(random(75, 550));
@@ -144,7 +144,7 @@ void XY_ezarri(){
     }
   }
 }
-void azkenPuntuak_Erantzuna(){
+void azkenPuntuak_Erantzuna(){  //Bide bakoitzaren bukaera eta ondorioz, erantzun zuzena zein izango den erabakitzen da hemen
   int num1 = int(random(1, 4));
   int num2 = int(random(1, 4));
   while(num1 != num2){
@@ -214,13 +214,13 @@ void azkenPuntuak_Erantzuna(){
     }
   }
 }
-int delta = 150;
+int delta = 150;  //Kurba bakoitzak izango duen forma, bariable honen balioa 0 izan ezkero marrak zuzenak izango lirateke
 void marraztuMarrak(int[][] puntuak){
   for(int i = 0; i < puntuak.length-1; i++){
-    strokeWeight(1);
-    stroke(50, 50, 50);
+    strokeWeight(1);  //Marren zabalera
+    stroke(50, 50, 50);  //Marren kolorea
     noFill();
-    bezier(
+    bezier(  //Bezier funtzioak kurba horiek marrazteko aukera ematen digu
       puntuak[i][0], puntuak[i][1],
       puntuak[i][0] + delta, puntuak[i][1],
       puntuak[i+1][0] - delta, puntuak[i+1][1], 
@@ -229,16 +229,16 @@ void marraztuMarrak(int[][] puntuak){
   }
 }
 void gordeIrudiakCsv(){
-  String fitxategia = "";
+  String fitxategia = "";  //Fitxategiaren izena ausazko 9 zenbakik osatzen du 
   for(int kontua = 0; kontua < 9; kontua++){
     int zenb = int(random(0, 10));
     fitxategia += "_"+zenb;
   }
-  saveFrame(pngPath+"bidea"+fitxategia+".png");
+  saveFrame(pngPath+"bidea"+fitxategia+".png");  //saveFrame funtzioak irudia gordeko digu
   
   
   
-  TableRow galderaBerria = csvTaula.addRow();
+  TableRow galderaBerria = csvTaula.addRow();  //Irudi bakoitzeko, csv-ra beharrezko informazioa gehituko zaio
   galderaBerria.setString("Mota", "Bideak");
   galderaBerria.setString("Galdera", "Zein da bide egokia?");
   galderaBerria.setInt("Erantzun zuzena", erantzuna);
@@ -246,5 +246,5 @@ void gordeIrudiakCsv(){
   galderaBerria.setInt("Erantzun okerra 2", okerra2);
   galderaBerria.setString("Fitxategia", "irudiak/bidea"+fitxategia);
   
-  saveTable(csvTaula, csvPath);
+  saveTable(csvTaula, csvPath);  //Csv-ko aldaketak gorde
 }
