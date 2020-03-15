@@ -1,5 +1,5 @@
 PImage img; //Atzealdeko irudia
-int count = 0;
+int count;
 int irudiaCount = 1;  //Zenbat irudi sortu nahi ditugun
 int x;
 int y;
@@ -7,9 +7,9 @@ int azkenX;  //Azkenengo ezarri den puntuaren X ardatzaren balioa
 int azkenY;  //Azkenengo ezarri den puntuaren Y ardatzaren balioa
 boolean X_ondo;
 boolean Y_ondo;
-int[][] puntuak1 = new int[5][2];  //Bideko puntuentzako array bidimentsionalak
-int[][] puntuak2 = new int[5][2];
-int[][] puntuak3 = new int[5][2];
+int[][] puntuak1;  //Bideko puntuentzako array bidimentsionalak
+int[][] puntuak2;
+int[][] puntuak3;
 int puntua1_X = 122;  //Irudian, ixa edo Tick-aren gainean dauden puntuen koordenatuak / bideen bukaerako puntuak
 int puntua1_Y = 320;
 int puntua2_X = 296;
