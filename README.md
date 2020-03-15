@@ -13,9 +13,15 @@ Processing-en orrialde ofizialetik egin ahalko dugu hori. [Processing Download](
 .ZIP luzapeneko artxibo bat deskargatuko zaigu, hau deskonprimatu besterik ez dugu egin beharko. Kodigoa duen artxiboa processing.exe programarekin ireki beharko dugu.
 
 ## **Programaren Logika**
-Hasieran, irudi bat kargatzen da, 'data' karpetan dagoena. 1, 2 eta 3 zenbakiak ditu goialdean, eta irudiaren behekaldean bi ixa gorri eta tick berde bat azaltzen dira. Hauen artean bide bana lotzen da, ausazko formez osatuta. Zenbaki bakoitza zein ikonorekin lotzen den ere ausaz erabakitzen da. Bukaeran irudia eta haren informazioa gordetzen dira. Hona hemen irudiaren adibide bat: 
+Hasieran, irudi bat kargatzen da, 'data' karpetan dagoena. 1, 2 eta 3 zenbakiak ditu goialdean, eta irudiaren behekaldean bi ixa gorri eta tick berde bat azaltzen dira. 
 
 ![Adibide irudia](data/EguneanBehin.png)
+
+Hauen artean bide bana lotzen da, ausazko formez osatuta. Zenbaki bakoitza zein ikonorekin lotzen den ere ausaz erabakitzen da. Bukaeran irudia eta haren informazioa gordetzen dira. Hona hemen irudiaren adibide bat: 
+
+![Adibide irudia](irudiak/bidea_0_1_5_2_1_4_5_1_3.png)
+
+
 
 Programaren funtzionaltasuna hainbat ataletan banatzen da.
 

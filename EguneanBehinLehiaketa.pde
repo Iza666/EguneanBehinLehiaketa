@@ -1,6 +1,6 @@
 PImage img; //Atzealdeko irudia
 int count;
-int irudiaCount = 1;  //Zenbat irudi sortu nahi ditugun
+int irudiaCount = 100;  //Zenbat irudi sortu nahi ditugun
 int x;
 int y;
 int azkenX;  //Azkenengo ezarri den puntuaren X ardatzaren balioa
