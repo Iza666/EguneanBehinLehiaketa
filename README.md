@@ -21,8 +21,6 @@ Hauen artean bide bana lotzen da, ausazko formez osatuta. Zenbaki bakoitza zein 
 
 ![Adibide irudia](irudiak/bidea_0_1_5_2_1_4_5_1_3.png)
 
-
-
 Programaren funtzionaltasuna hainbat ataletan banatzen da.
 
 ### **1.** setup()
@@ -47,7 +45,7 @@ Irudia osatuta dagoenean eta erantzuna zein erantzun okerrak zeintzuk diren daki
 
 ## **Oharrak**
 ### **1.** Irudi asko
-Irudi asko sortu nahi badira, programak ez du biderik ez ezer erakusten denak gorde arte, beraz izan pazientzia.
+Irudi asko sortu nahi badira, programak ez du biderik ez ezer erakusten denak gorde arte, beraz, izan pazientzia, irudi asko badira segundu batzuk tardatu ditzake eta programak ezer erakutsi arte.
 
 ### **2.** Csv artxiboa
 Csv artxiboa ezabatu eta berriro sortzen da programa berriro exekutatu ezkero. Irudiek izen ezberdina edukiko dute eta denak gordeko dira, baina Csv artxiboaren izena aldatu ezean ez da gordeko.
